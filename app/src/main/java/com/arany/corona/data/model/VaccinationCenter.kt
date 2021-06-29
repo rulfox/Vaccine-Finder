@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName
 data class VaccinationCenter(
     @PrimaryKey
     @SerializedName("id")
-    val id: Int?,
+    val id: Int,
     @SerializedName("address")
     val address: String?,
     @SerializedName("address_l")
@@ -40,7 +40,7 @@ data class VaccinationCenter(
     @SerializedName("lat")
     val lat: Double?,
     @SerializedName("long")
-    val long: Double?,
+    val lng: Double?,
     @SerializedName("min_age_limit")
     val minAgeLimit: Int?,
     @SerializedName("name")
@@ -52,7 +52,7 @@ data class VaccinationCenter(
     @SerializedName("session_id")
     val sessionId: String?,
     @SerializedName("slots")
-    val slots: List<String?>?,
+    val slots: List<String>?,
     @SerializedName("state_name")
     val stateName: String?,
     @SerializedName("state_name_l")
@@ -61,8 +61,4 @@ data class VaccinationCenter(
     val to: String?,
     @SerializedName("vaccine")
     val vaccine: String?
-){
-    fun is45PlusBookingsAvailable(): Boolean{
-        return (minAgeLimit!! >= 45 && availableCapacityDose1!! > 0)
-    }
-}
+)
