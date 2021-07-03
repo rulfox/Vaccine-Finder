@@ -8,8 +8,9 @@ import com.arany.corona.data.repository.dataSource.VaccinationCenterLocalDataSou
 import com.arany.corona.data.repository.dataSource.VaccinationCenterRemoteDataSource
 import com.arany.corona.domain.repository.VaccinationCenterRepository
 import retrofit2.Response
+import javax.inject.Inject
 
-class VaccinationCenterRepositoryImpl(
+class VaccinationCenterRepositoryImpl @Inject constructor(
     private val vaccinationCenterRemoteDataSource: VaccinationCenterRemoteDataSource,
     private val vaccinationCenterLocalDataSource: VaccinationCenterLocalDataSource,
     private val vaccinationCenterCachedDataSource: VaccinationCenterCachedDataSource

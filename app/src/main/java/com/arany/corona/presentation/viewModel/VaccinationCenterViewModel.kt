@@ -11,9 +11,11 @@ import androidx.lifecycle.viewModelScope
 import com.anushka.newsapiclient.data.util.Resource
 import com.arany.corona.data.model.VaccinationCenterResponse
 import com.arany.corona.domain.useCase.GetVaccinationCentersByDistrictUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+@HiltViewModel
 class VaccinationCenterViewModel(
     private val app: Application,
     private val getVaccinationCentersByDistrictUseCase: GetVaccinationCentersByDistrictUseCase): AndroidViewModel(app) {

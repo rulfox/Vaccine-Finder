@@ -15,9 +15,11 @@ import com.arany.corona.data.model.VaccinationCenterResponse
 import com.arany.corona.domain.useCase.GetDistrictsUseCase
 import com.arany.corona.domain.useCase.GetStatesUseCase
 import com.arany.corona.domain.useCase.GetVaccinationCentersByDistrictUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
+@HiltViewModel
 class LocationViewModel(
     private val app: Application,
     private val getStatesUseCase: GetStatesUseCase,

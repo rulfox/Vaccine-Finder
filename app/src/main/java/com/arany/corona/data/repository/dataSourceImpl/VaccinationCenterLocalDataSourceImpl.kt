@@ -4,8 +4,9 @@ import com.arany.corona.data.model.VaccinationCenter
 import com.arany.corona.data.repository.dataSource.VaccinationCenterLocalDataSource
 import com.arany.corona.db.VaccinationCenterDAO
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class VaccinationCenterLocalDataSourceImpl(private val vaccinationCenterDAO: VaccinationCenterDAO): VaccinationCenterLocalDataSource {
+class VaccinationCenterLocalDataSourceImpl @Inject constructor(private val vaccinationCenterDAO: VaccinationCenterDAO): VaccinationCenterLocalDataSource {
     override suspend fun saveVaccinationCentersToDB(vaccinationCenter: VaccinationCenter) {
         vaccinationCenterDAO.insertVaccinationCenter(vaccinationCenter)
     }
