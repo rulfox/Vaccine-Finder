@@ -14,9 +14,10 @@ import com.arany.corona.domain.useCase.GetVaccinationCentersByDistrictUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
-class VaccinationCenterViewModel(
+class VaccinationCenterViewModel @Inject constructor(
     private val app: Application,
     private val getVaccinationCentersByDistrictUseCase: GetVaccinationCentersByDistrictUseCase): AndroidViewModel(app) {
 

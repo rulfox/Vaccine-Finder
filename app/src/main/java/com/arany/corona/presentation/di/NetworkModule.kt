@@ -1,4 +1,4 @@
-package com.arany.corona.di
+package com.arany.corona.presentation.di
 
 import androidx.viewbinding.BuildConfig
 import com.arany.corona.Constants
@@ -15,12 +15,11 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
-import javax.inject.Named
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
 @Module
-object NetworkModule {
+class NetworkModule {
 
     @Provides
     @Singleton

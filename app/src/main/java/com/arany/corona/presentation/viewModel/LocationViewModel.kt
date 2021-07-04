@@ -7,6 +7,7 @@ import android.net.NetworkCapabilities
 import android.os.Build
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.anushka.newsapiclient.data.util.Resource
 import com.arany.corona.data.model.DistrictResponse
@@ -18,12 +19,13 @@ import com.arany.corona.domain.useCase.GetVaccinationCentersByDistrictUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
 @HiltViewModel
-class LocationViewModel(
+class LocationViewModel @Inject constructor(
     private val app: Application,
     private val getStatesUseCase: GetStatesUseCase,
-    private val getDistrictsUseCase: GetDistrictsUseCase): AndroidViewModel(app) {
+    private val getDistrictsUseCase: GetDistrictsUseCase): ViewModel() {
 
     //Find States
     val states: MutableLiveData<Resource<StateResponse>> = MutableLiveData()

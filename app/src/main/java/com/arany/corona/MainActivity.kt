@@ -23,26 +23,26 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity(), CoroutineScope by CoroutineScope(Dispatchers.Main) {
 
-    @Inject lateinit var apiService: ApiService
     private lateinit var binding: ActivityMainBinding
+    /*@Inject lateinit var apiService: ApiService
     private var states = arrayListOf<StateAbstract.State>()
     private var districts = arrayListOf<DistrictAbstract.District>()
 
     private var selectedStateId: Int ?= null
-    private var selectedDistrictId: Int ?= null
+    private var selectedDistrictId: Int ?= null*/
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this@MainActivity, R.layout.activity_main)
-        callStateApi()
+        /*callStateApi()
         initializeAdapter()
         initializeListeners()
         if(!PreferenceHelper.getDistrictId().isNullOrEmpty()){
             actionOnService(Actions.START, this)
-        }
+        }*/
     }
 
-    private fun initializeListeners() {
+    /*private fun initializeListeners() {
         binding.proceed.setOnClickListener {
             if(selectedDistrictId != null && selectedStateId != null){
                 PreferenceHelper.setDistrictId(selectedDistrictId?.toString().toString())
@@ -131,5 +131,5 @@ class MainActivity : AppCompatActivity(), CoroutineScope by CoroutineScope(Dispa
             Timber.e("Starting the service in < 26 Mode")
             context.startService(it)
         }
-    }
+    }*/
 }
